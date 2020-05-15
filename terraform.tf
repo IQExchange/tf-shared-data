@@ -1,3 +1,5 @@
+# AWS Data
+
 data "aws_ami" "amazon-linux-2" {
   most_recent = true
   owners = [ "amazon" ]
@@ -81,4 +83,28 @@ data "aws_ami" "windows-2019" {
 
 data "aws_availability_zones" "awsazs" {
   state = "available"
+}
+
+
+# IQX Data
+
+data "aws_vpc" "vpc" {
+  provider = aws
+  tags = {
+    Environment = var.environment
+  }
+}
+
+data "aws_subnet_ids" "private_subnets" {
+  vpc_id = data.aws_vpc.vpc.id
+  tags = {
+    Tier = "private"
+  }
+}
+
+data "aws_subnet_ids" "public_subnets" {
+  vpc_id = data.aws_vpc.vpc.id
+  tags = {
+    Tier = "public"
+  }
 }
