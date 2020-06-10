@@ -86,7 +86,7 @@ data "aws_availability_zones" "awsazs" {
 }
 
 
-# IQX Data
+# Specific Data
 
 data "aws_vpc" "vpc" {
   provider = aws
