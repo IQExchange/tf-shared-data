@@ -2,27 +2,27 @@
 
 output "aws_azs" {
   description = "(available) AWS Availability Zones"
-  value = data.aws_availability_zones.awsazs.names
+  value       = data.aws_availability_zones.awsazs.names
 }
 
 output "amzn_linux_ami_id" {
   description = "Latest Amazon Linux 2 AMI"
-  value = data.aws_ami.amazon-linux-2.id
+  value       = data.aws_ami.amazon-linux-2.id
 }
 
 output "centos_ami_id" {
   description = "Latest CentOS 7 AMI"
-  value = data.aws_ami.centos.id
+  value       = data.aws_ami.centos.id
 }
 
 output "ubuntu_ami_id" {
   description = "Latest Ubuntu (bionic) AMI"
-  value = data.aws_ami.ubuntu.id
+  value       = data.aws_ami.ubuntu.id
 }
 
 output "windows_ami_id" {
   description = "Latest Windows 2019 AMI"
-  value = data.aws_ami.windows-2019.id
+  value       = data.aws_ami.windows-2019.id
 }
 
 
