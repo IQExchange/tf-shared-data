@@ -7,7 +7,7 @@ output "aws_azs" {
 
 output "amzn_linux_ami_id" {
   description = "Latest Amazon Linux 2 AMI"
-  value       = data.aws_ami.amazon-linux-2.id
+  value       = data.aws_ami.amazon_linux_2.id
 }
 
 output "centos_ami_id" {
@@ -22,7 +22,7 @@ output "ubuntu_ami_id" {
 
 output "windows_ami_id" {
   description = "Latest Windows 2019 AMI"
-  value       = data.aws_ami.windows-2019.id
+  value       = data.aws_ami.windows_2019.id
 }
 
 
