@@ -1,0 +1,5 @@
+terraform 0.13.3 0.12.29 system
+# asdk for terraform-docs doesn't work with pre-commit?
+# terraform-docs 0.9.1 system
+tflint 0.20.1 system
+tfsec 0.25.0 system

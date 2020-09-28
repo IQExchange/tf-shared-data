@@ -1,22 +1,26 @@
 # AWS Data
 
-data "aws_ami" "amazon-linux-2" {
+data "aws_ami" "amazon_linux_2" {
   most_recent = true
   owners      = ["amazon"]
+
   filter {
     name = "name"
     values = [
       "amzn2-ami-hvm*"
     ]
   }
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
   filter {
     name   = "architecture"
     values = ["x86_64"]
   }
+
   filter {
     name   = "root-device-type"
     values = ["ebs"]
@@ -25,6 +29,8 @@ data "aws_ami" "amazon-linux-2" {
 
 data "aws_ami" "ubuntu" {
   most_recent = true
+  owners      = ["099720109477"]
+  # Canonical
 
   filter {
     name = "name"
@@ -32,26 +38,26 @@ data "aws_ami" "ubuntu" {
       "ubuntu/images/hvm-ssd/ubuntu-bionic-18.04-amd64-server-*"
     ]
   }
+
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
   filter {
     name   = "architecture"
     values = ["x86_64"]
   }
+
   filter {
     name   = "root-device-type"
     values = ["ebs"]
   }
-
-  owners = ["099720109477"]
-  # Canonical
 }
 
 data "aws_ami" "centos" {
-  owners      = ["679593333241"]
   most_recent = true
+  owners      = ["679593333241"]
 
   filter {
     name   = "name"
@@ -62,19 +68,22 @@ data "aws_ami" "centos" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
   filter {
     name   = "architecture"
     values = ["x86_64"]
   }
+
   filter {
     name   = "root-device-type"
     values = ["ebs"]
   }
 }
 
-data "aws_ami" "windows-2019" {
+data "aws_ami" "windows_2019" {
   most_recent = true
   owners      = ["amazon"]
+
   filter {
     name   = "name"
     values = ["Windows_Server-2019-English-Full-Base*"]
