@@ -2,17 +2,21 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.2.0
+    rev: v3.4.0
     hooks:
       - id: check-added-large-files
+      - id: check-merge-conflict
       - id: check-yaml
       - id: detect-aws-credentials
+      - id: detect-private-key
       - id: end-of-file-fixer
+      - id: no-commit-to-branch
       - id: trailing-whitespace
   - repo: git://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.32.0
+    rev: v1.50.0
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
+        verbose: true
       - id: terraform_tflint
       - id: terraform_tfsec
