@@ -1,7 +1,4 @@
-terraform 0.14.11 system
-# asdf for terraform-docs doesn't work with pre-commit
-# there is an issue reported for terraform-docs, supposedly
-# fixed in v 0.10.1 but doesn't fix for me
+terraform 0.15.3
 terraform-docs system
-tflint 0.20.1 system
-tfsec 0.25.0 system
+tflint 0.28.1 system
+tfsec 0.39.32 system
