@@ -11,7 +11,7 @@ output "amzn_linux_ami_id" {
 }
 
 output "centos_ami_id" {
-  description = "Latest CentOS 7 AMI"
+  description = "Latest CentOS 8 AMI"
   value       = data.aws_ami.centos.id
 }
 
@@ -29,13 +29,13 @@ output "windows_ami_id" {
 # Specific Outputs
 
 output "private_subnet_ids" {
-  value = var.specific_output ? data.aws_subnet_ids.private_subnets.ids : ["N/A"]
+  value = var.specific_output ? data.aws_subnets.private_subnets.ids : []
 }
 
 output "public_subnet_ids" {
-  value = var.specific_output ? data.aws_subnet_ids.public_subnets.ids : ["N/A"]
+  value = var.specific_output ? data.aws_subnets.public_subnets.ids : []
 }
 
 output "vpc_id" {
-  value = var.specific_output ? data.aws_vpc.vpc.id : "N/A"
+  value = var.specific_output ? data.aws_vpc.vpc.id : null
 }

@@ -57,11 +57,11 @@ data "aws_ami" "ubuntu" {
 
 data "aws_ami" "centos" {
   most_recent = true
-  owners      = ["679593333241"]
+  owners      = ["125523088429"]
 
   filter {
     name   = "name"
-    values = ["CentOS Linux 7 x86_64 HVM EBS *"]
+    values = ["CentOS Stream 8 x86_64 *"]
   }
 
   filter {
@@ -104,15 +104,21 @@ data "aws_vpc" "vpc" {
   }
 }
 
-data "aws_subnet_ids" "private_subnets" {
-  vpc_id = data.aws_vpc.vpc.id
+data "aws_subnets" "private_subnets" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.vpc.id]
+  }
   tags = {
     Tier = "private"
   }
 }
 
-data "aws_subnet_ids" "public_subnets" {
-  vpc_id = data.aws_vpc.vpc.id
+data "aws_subnets" "public_subnets" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.vpc.id]
+  }
   tags = {
     Tier = "public"
   }
