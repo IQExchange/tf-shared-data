@@ -1,4 +1,9 @@
-terraform 0.15.3
-terraform-docs system
-tflint 0.28.1 system
-tfsec 0.39.32 system
+awscli 2.7.27
+pre-commit 2.20.0
+python 3.9.15
+terraform 1.2.8
+# might need to set global golang
+# `asdf global golang 1.18.1`
+terraform-docs 0.16.0
+tflint 0.39.3
+tfsec 1.27.5
