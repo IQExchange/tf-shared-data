@@ -17,3 +17,9 @@ repos:
       - id: terraform_fmt
       - id: terraform_tflint
       - id: terraform_tfsec
+  - repo: https://github.com/commitizen-tools/commitizen
+    hooks:
+      - id: commitizen
+        stages:
+          - commit-msg
+    rev: v2.21.2
