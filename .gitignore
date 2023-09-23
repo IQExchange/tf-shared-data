@@ -1,0 +1,38 @@
+# dev stuff
+.bundle
+.idea/
+*sublime*
+
+# ansible
+*.retry
+ansible/local.yml
+
+# crap
+log/*
+tmp/*
+.DS_Store*
+trash/
+
+# build artifacts
+*.zip
+sam-output.yml
+
+# should this be included?
+node_modules
+
+# terraform
+.terraform
+terraform.tfstate*
+*.tfstate
+terraform.tfstate.d
+# incompatible with build system
+.terraform.lock.hcl
+terraform/seed-k8s
+
+# sam
+.aws-sam
+cloudformation/packaged.yaml
+
+# specific
+cloudformation/basic-iam-user-password.json
+terraform/lab/kubeconfig_cluster-lab
